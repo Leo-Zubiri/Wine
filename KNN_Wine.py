@@ -12,8 +12,8 @@ def KNN(k):
     ###DEFINIR EL VALOR DE "K"  - Un número entre 1 y el total de registros de la instancia (entrenamiento)
     K = k
 
-    #archivo = open("Wine_Entrenamiento.csv","r")
-    archivo = open("iris_entrenamiento.csv","r")
+    archivo = open("wine_entrenamiento.csv","r")
+    #archivo = open("iris_entrenamiento.csv","r")
     contenido = archivo.readlines()
 
     #VISUALIZA EL CONTENIDO DEL ARCHIVO
@@ -24,19 +24,19 @@ def KNN(k):
 
 
     lista = [linea.split(",") for linea in contenido]
-    #instancia = [ [ list(map(float,x[:12])), int(x[13].replace("\n","")) ] for x in lista ]
-    instancia = [ [ list(map(float,x[:4])), x[4] ] for x in lista ]  
+    instancia = [ [ list(map(float,x[:13])), int(x[13].replace("\n","")) ] for x in lista ]
+    #instancia = [ [ list(map(float,x[:4])), x[4] ] for x in lista ]  
 
     ###CARGAR INSTANCIA DE PRUEBA
 
-    #archivo = open("Wine_prueba.csv","r")
-    archivo = open("iris_prueba.csv","r")
+    archivo = open("wine_prueba.csv","r")
+    #archivo = open("iris_prueba.csv","r")
     contenido = archivo.readlines()
 
     lista = [linea.split(",") for linea in contenido]
 
-    #prueba = [ [ list(map(float,x[:12])), int(x[13].replace("\n","")) ] for x in lista ] 
-    prueba = [ [ list(map(float,x[:4])), x[4] ] for x in lista ] 
+    prueba = [ [ list(map(float,x[:13])), int(x[13].replace("\n","")) ] for x in lista ] 
+    #prueba = [ [ list(map(float,x[:4])), x[4] ] for x in lista ] 
 
     print("Total de datos de la Instancia",len(prueba))
 

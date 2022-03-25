@@ -12,7 +12,7 @@ with open("resultados.csv", "w") as f:
 
 
 
-for k in range(1,36,1):
+for k in range(1,53,1):
     res = KNN(k)
     resultados.append(res)
     with open("resultados.csv", "a") as f:
